@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>宝珠梨可视化溯源系统</title>
+		<link rel="stylesheet" href="css/index.css" type="text/css">
+        <link rel="stylesheet" href="css/nav.css" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <base target="_blank" />
+	</head>
+	<body>
+		<header>
+		<div class="menu-bar">
+			<img src="img/baozhuli.png" alt="logo" class="logo">
+		  <nav>
+			<ul>
+				<li class="active"><a href="index.html"> <i class="fa fa-home"></i>首页</a>
+					
+				<li><a href="#"><i class="fa fa-music" ></i>溯源系统</a>
+					<div class="sub-menu-1">
+						<ul>
+							<li><a href="fivetonedetial.html">产地监控</a></li>
+							<li><a href="fivetoneorigin.html">数据可视化</a></li>
+							<li><a href="fivetone.html">溯源码查询</a></li>					  
+					    </ul>
+				    </div>
+			    </li>
+			  
+			    <li><a href="#"><i class="fa fa-headphones" aria-hidden="true"></i>电商兴农</a>
+			    	<div class="sub-menu-1">
+			    		<ul>
+			    			<li><a href="PIdetial.html">宝珠梨</a></li>
+			    			<li><a href="PIorigin.html">文创产品</a></li>
+			    			<li><a href="Math.html">团建服务</a></li>					  
+					    </ul>
+				    </div>
+			    </li>
+		
+		        <li><a href="#"><i class="fa fa-book" ></i>论坛</a>
+		            <div class="sub-menu-1">
+		            	<ul>
+					        <li><a href="seventone.html">专家解答</a></li>
+					        <li><a href="Instruments.html">最新咨询</a></li>
+					        <li><a href="multi.html">肥料供应商</a></li>					  
+					    </ul>
+		            </div>
+		        </li>
+		        
+		        <li><a href="#"><i class="fa fa-info-circle"></i>感谢</a>
+		        	<div class="sub-menu-1">
+		        		<ul>
+		        			<li><a href="thanks.html">鸣谢</a></li>
+					        <li><a href="questionnaire.html">反馈与建议</a></li>					  
+					    </ul>
+		            </div>
+		        </li>
+			</ul>
+		  </nav>
+		</div>
+		</header>
+		
+		<div class="main">
+			<!-- wrap模块包裹轮播图片 -->
+			<div class="wrap" id="wrap">
+				<ul id="pic">
+					<li><img id="g_image1" src="img/a5.jpeg" alt=""></li>
+					<li><img src="img/a.jpeg" alt=""></li>
+					<li><img src="img/a1.jpg" alt=""></li>
+					<li><img src="img/a3.jpg" alt=""></li>
+					<li><img src="img/a2.jpeg" alt=""></li>
+				</ul>
+				<ol id="list">
+					<li class="active">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ol>
+			</div>
+			<script type="text/javascript">
+				window.onload=function(){
+					var wrap=document.getElementById('wrap'),
+					pic=document.getElementById('pic'),
+					list=document.getElementById('list').getElementsByTagName('li'),
+					index=0,
+					timer=null;
+					// 定义并调用自动播放函数
+					if(timer){
+						clearInterval(timer);
+						timer=null;
+					}
+					timer=setInterval(autoplay,2000);
+					// 定义图片切换函数
+					function autoplay(){
+						index++;
+						if(index>=list.length){
+							index=0;
+						}
+						changeoptions(index);
+					}
+					// 鼠标划过整个容器时停止自动播放
+					wrap.onmouseover=function(){
+						clearInterval(timer);
+					}
+					// 鼠标离开整个容器时继续播放至下一张
+					wrap.onmouseout=function(){
+						timer=setInterval(autoplay,2000);
+					}
+					// 遍历所有数字导航实现划过切换至对应的图片
+					for(var i=0;i<list.length;i++){
+						list[i].id=i;
+						list[i].onmouseover=function(){
+							clearInterval(timer);
+							changeoptions(this.id);
+						}
+					}
+					function changeoptions(curindex){
+						for(var j=0;j<list.length;j++){
+							list[j].className='';
+							pic.style.top=0;
+						}
+						list[curindex].className='active';
+						pic.style.top=-curindex*495+'px';
+						index=curindex;
+					}
+				}
+			</script>
+			
+			<div class="news">
+				<p style="font-family: '隶书';">
+					“宝珠梨是云南众多梨果中的佼佼者，果圆形，一般重200-330克，大者达500克，皮薄，淡黄绿色，果肉雪白，脆嫩，汁多，味浓甜，微香，食后无渣。万溪冲村隶属于吴家营街道，地处半山区。位于吴家营街道东南边，距离吴家营街道办事处10公里，国土面积9.95平方公里，海拔2020米，年平均气温13.70 ℃，年降水量769毫米，适宜种植蔬菜、水果等农作物。“
+				</p>
+			</div>
+			<div style="clear: both"></div>
+			
+			<div class="squ">
+				<div class="box">
+					<img src="img/a6.webp" />
+					<div class="ceng">
+						<h2>“宝珠梨”介绍</h2>
+						<p>宝珠梨的起源以及发展现状</p>
+						<a href="baozhulidetial.html">了解更多&nbsp;></a>
+					</div>
+				</div>
+		        <div class="box">
+			        <img src="img/督办.png" />
+			        <div class="ceng">
+				        <h2>溯源系统</h2>
+				        <p>点击此处查看生产基地以及检索溯源码</p>
+				        <a href="Math.html">了解更多&nbsp;></a>
+			        </div>
+		        </div>
+		        <div class="box">
+		        	<img src="img/钱.png" />
+		        	<div class="ceng">
+		        		<h2>电商购买页面</h2>
+		        		<p>点击此处购买宝珠梨、万溪冲文创产品和团建服务</p>
+		        		<a href="seventone.html">了解更多&nbsp;></a>
+		        	</div>
+		        </div>
+		        <div class="box">
+		        	<img src="img/ie浏览器.png" />
+		        	<div class="ceng">
+		        		<h2>论坛</h2>
+		        		<p>点击此处查看宝珠梨最新咨询</p>
+		        		<a href="multi.html">了解更多&nbsp;></a>
+		        	</div>
+		        </div>
+			</div>
+			<div class="yq">
+				<img src="img/下载.jpg" width="800px"/>
+				<div class="btn">
+					
+					<a href="Instruments.html">万溪村详细信息&nbsp;></a>
+			    </div>
+		    </div>
+			
+		</div>
+		
+	    <div class="footer-main-div">
+		
+		<div class="footer-menu-one">
+		  <ul>
+		  	<li> <a href="thanks.html">特别鸣谢</a></li>
+		  	<li> <a href="#">dy</a></li>
+			<li> <a href="questionnaire.html">反馈与建议</a></li>
+		  </ul>
+		</div>
+	   
+		<div class="footer-bottom">
+		  <p><a href="mailto:sjdy1999922@126.com">联系网站作者</a>&nbsp &nbsp Copyright &copy;<script>document.write(new Date().getFullYear())</script>&nbsp DAI</p>
+		</div>
+	    </div>
+		<script type="text/javascript">
+			(function() {
+				if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+					handleFontSize();
+				} else {
+					if (document.addEventListener) {
+						document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+					} else if (document.attachEvent) {
+						document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+						document.attachEvent("onWeixinJSBridgeReady", handleFontSize);  }
+				}
+				function handleFontSize() {
+					// 设置网页字体为默认大小
+					WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+					// 重写设置网页字体大小的事件
+					WeixinJSBridge.on('menu:setfont', function() {
+						WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize' : 0 });
+					});
+				}
+			})();
+		</script>	
+	</body>
+</html>
